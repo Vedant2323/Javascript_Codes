@@ -1,0 +1,101 @@
+SCTR’s PUNE INSTITUTE OF COMPUTER TECHNOLOGY, PUNE - 411043
+DEPARTMENT OF ELECTRONICS & TELECOMMUNICATION ENGINEERING
+
+Lab Practice -2 [404184C] : ELECTIVE-III(C) - JavaScript
+ACADEMIC YEAR: 2025-26
+CLASS:
+
+BE
+
+DIV:
+
+Roll No
+
+42101
+
+ABC ID:
+
+05
+
+Batch:
+
+P5
+
+506826699570
+Experiment No.:08
+
+Code:
+Exp08.html code:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Exp 8 | 42101</title>
+<style>
+body {
+}
+
+text-align: center;
+
+label,
+input {
+
+padding: 5px;
+font-size: 30px;
+
+}
+</style>
+
+</head>
+<body id="body">
+
+<label id="name">Name: Vedant Agrawal</label>
+<br /><br />
+<label>Roll no: 42101</label>
+<br /><br />
+
+<label>Batch:</label>
+<input id="batch" type="text" />
+
+<script>
+const name_ele = document.getElementById("name");
+const input = document.getElementById("batch");
+const body = document.getElementById("body");
+
+// Mouseover event for Name label
+name_ele.addEventListener("mouseover", function () {
+body.style.backgroundColor = "yellow";
+});
+// Mouseout event for Name Label
+
+name_ele.addEventListener("mouseout", function () {
+body.style.backgroundColor = "white";
+});
+
+DATE:
+SEMESTER
+
+: I
+
+// Focus event for Batch input
+
+input.addEventListener("focus", function () {
+body.style.backgroundColor = "orange";
+});
+// Blur event for Batch input
+
+input.addEventListener("blur", function () {
+body.style.backgroundColor = "white";
+
+});
+</script>
+
+</body>
+</html>
+
+Output:
+
+

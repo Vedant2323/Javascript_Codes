@@ -1,0 +1,300 @@
+SCTR’s PUNE INSTITUTE OF COMPUTER TECHNOLOGY, PUNE - 411043
+DEPARTMENT OF ELECTRONICS & TELECOMMUNICATION ENGINEERING
+
+Lab Practice -2 [404184C] : ELECTIVE-III(C) - JavaScript
+ACADEMIC YEAR: 2025-26
+CLASS:
+
+BE
+
+DIV:
+
+Roll No
+
+42101
+
+ABC ID:
+
+05
+
+Batch:
+
+P5
+
+506826699570
+
+DATE:
+SEMESTER
+
+Experiment No.:09
+Code:
+index.html code:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Information Form</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-5">
+
+<div class="card shadow-lg p-4">
+<h2 class="text-center text-primary mb-4">Student Information Form</h2>
+<form id="studentForm" onsubmit="return handleSubmit(event)">
+<!-- Name -->
+<div class="mb-3">
+
+<label for="name" class="form-label">Full Name</label>
+<input type="text" id="name" class="form-control" placeholder="Enter full name">
+
+<div class="text-danger small" id="nameError"></div>
+</div>
+<!-- Address -->
+
+<div class="mb-3">
+<label for="address" class="form-label">Address</label>
+
+<textarea id="address" class="form-control" placeholder="Enter address"></textarea>
+<div class="text-danger small" id="addressError"></div>
+
+</div>
+
+<!-- City -->
+<div class="mb-3">
+
+<label for="city" class="form-label">City</label>
+<input type="text" id="city" class="form-control" placeholder="Enter city">
+
+<div class="text-danger small" id="cityError"></div>
+</div>
+
+: I
+
+<!-- State -->
+
+<div class="mb-3">
+<label for="state" class="form-label">State</label>
+
+<input type="text" id="state" class="form-control" placeholder="Enter state">
+<div class="text-danger small" id="stateError"></div>
+
+</div>
+
+<!-- Gender -->
+<div class="mb-3">
+
+<label class="form-label">Gender</label><br>
+<div class="form-check form-check-inline">
+
+<input type="radio" name="gender" value="Male" class="form-check-input">
+<label class="form-check-label">Male</label>
+
+</div>
+<div class="form-check form-check-inline">
+
+<input type="radio" name="gender" value="Female" class="form-check-input">
+<label class="form-check-label">Female</label>
+
+</div>
+<div class="form-check form-check-inline">
+
+<input type="radio" name="gender" value="Other" class="form-check-input">
+<label class="form-check-label">Other</label>
+
+</div>
+<div class="text-danger small" id="genderError"></div>
+
+</div>
+
+<!-- Mobile -->
+<div class="mb-3">
+
+<label for="mobile" class="form-label">Mobile Number</label>
+<input type="text" id="mobile" class="form-control" placeholder="Enter 10-digit mobile number">
+
+<div class="text-danger small" id="mobileError"></div>
+</div>
+<!-- Email -->
+
+<div class="mb-3">
+<label for="email" class="form-label">Email ID</label>
+
+<input type="text" id="email" class="form-control" placeholder="Enter email">
+<div class="text-danger small" id="emailError"></div>
+
+</div>
+
+<!-- Submit -->
+<button type="submit" class="btn btn-primary w-100">Submit</button>
+
+</form>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+success.html code:
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-light">
+
+<div class="container mt-3 position-relative">
+
+<!-- Logout Button -->
+<button id="logoutBtn" class="btn btn-danger position-absolute top-0 end-0 m-3">Logout</button>
+<div class="card shadow-lg p-4 text-center mt-5">
+
+<h1 id="welcomeMsg" class="text-success">Welcome!</h1>
+<p class="lead">You have successfully logged in.</p>
+
+</div>
+</div>
+
+<script>
+
+// Display student's name
+let name = localStorage.getItem("studentName");
+
+if(name) {
+document.getElementById("welcomeMsg").innerText = "Welcome " + name + ", successfully login!";
+}
+
+// Logout button
+document.getElementById("logoutBtn").addEventListener("click", function() {
+localStorage.removeItem("studentName"); // Clear stored name
+window.location.href = "index.html"; // Redirect to login form
+
+});
+</script>
+</body>
+</html>
+
+style.css code:
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+
+.card {
+}
+
+border-radius: 12px;
+
+textarea {
+
+}
+
+resize: none;
+height: 70px;
+
+input:focus, textarea:focus {
+border-color: #4cafef;
+
+}
+
+box-shadow: 0 0 5px rgba(76, 175, 239, 0.4);
+outline: none;
+
+script.js code:
+function handleSubmit(event) {
+event.preventDefault();
+
+let name = document.getElementById("name").value.trim();
+let address = document.getElementById("address").value.trim();
+let city = document.getElementById("city").value.trim();
+let state = document.getElementById("state").value.trim();
+
+let gender = document.querySelector('input[name="gender"]:checked');
+let mobile = document.getElementById("mobile").value.trim();
+let email = document.getElementById("email").value.trim();
+let namePattern = /^[A-Za-z ]+$/;
+let mobilePattern = /^[0-9]{10}$/;
+
+let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+document.querySelectorAll(".text-danger").forEach(e => e.innerHTML = "");
+let isValid = true;
+if (name === "" || !namePattern.test(name)) {
+document.getElementById("nameError").innerHTML = "Enter valid name (alphabets only).";
+}
+
+isValid = false;
+
+if (address === "") {
+document.getElementById("addressError").innerHTML = "Address cannot be empty.";
+}
+
+isValid = false;
+
+if (city === "" || !namePattern.test(city)) {
+document.getElementById("cityError").innerHTML = "Enter valid city name.";
+}
+
+isValid = false;
+
+if (state === "" || !namePattern.test(state)) {
+document.getElementById("stateError").innerHTML = "Enter valid state name.";
+}
+
+isValid = false;
+
+if (!gender) {
+document.getElementById("genderError").innerHTML = "Select gender.";
+}
+
+isValid = false;
+
+if (!mobilePattern.test(mobile)) {
+document.getElementById("mobileError").innerHTML = "Enter 10-digit mobile number.";
+}
+
+isValid = false;
+
+if (!emailPattern.test(email)) {
+
+document.getElementById("emailError").innerHTML = "Enter valid email.";
+}
+
+isValid = false;
+
+if (isValid) {
+
+}
+
+}
+
+localStorage.setItem("studentName", name);
+window.location.href = "success.html";
+
+Output:
+
+

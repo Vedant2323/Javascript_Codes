@@ -1,0 +1,308 @@
+SCTR’s PUNE INSTITUTE OF COMPUTER TECHNOLOGY, PUNE - 411043
+DEPARTMENT OF ELECTRONICS & TELECOMMUNICATION ENGINEERING
+
+Lab Practice -2 [404184C] : ELECTIVE-III(C) - JavaScript
+ACADEMIC YEAR: 2025-26
+CLASS:
+
+BE
+
+DIV:
+
+Roll No
+
+42101
+
+ABC ID:
+
+05
+
+Batch:
+
+P5
+
+506826699570
+Experiment No.:06
+
+Code:
+index.html code:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Operations using JavaScript</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+<div class="info">
+<h3>Name: Vedant Agrawal</h3>
+<h3>Roll Number: 42101</h3>
+</div>
+<h1>Array Operations</h1>
+<div class="shape-box">
+
+<h2>Create Array</h2>
+<label>Enter number of elements:</label>
+
+<input type="number" id="arraySize" placeholder="Number of elements">
+<button onclick="setArraySize()">Set Size</button>
+<div id="elementInputs"></div>
+<div id="createResult" class="result"></div>
+
+</div>
+
+<div class="shape-box">
+<h2>Remove Specific Element</h2>
+
+<label>Enter element to remove:</label>
+<input type="text" id="removeElement" placeholder="Element to remove">
+<button onclick="removeElement()">Remove</button>
+<div id="removeResult" class="result"></div>
+
+</div>
+
+<div class="shape-box">
+<h2>Check if Element Exists</h2>
+
+<label>Enter element to check:</label>
+
+DATE:
+SEMESTER
+
+: I
+
+<input type="text" id="checkElement" placeholder="Element to check">
+<button onclick="checkElement()">Check</button>
+<div id="checkResult" class="result"></div>
+
+</div>
+
+<div class="shape-box">
+<h2>Empty Array</h2>
+
+<button onclick="emptyArray()">Empty Array</button>
+<div id="emptyResult" class="result"></div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+style.css code:
+body {
+
+font-family: Arial, sans-serif;
+background-color: #f0f8ff;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+
+}
+
+margin: 0;
+
+.container {
+
+background-color: white;
+padding: 20px;
+
+border-radius: 10px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+text-align: center;
+width: 450px;
+
+.info {
+margin-bottom: 20px;
+}
+
+text-align: left;
+
+h1 {
+
+}
+
+margin-bottom: 20px;
+color: #333;
+
+.shape-box {
+background-color: #fafafa;
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 15px;
+
+margin-bottom: 15px;
+}
+
+text-align: left;
+
+.shape-box h2 {
+
+}
+
+text-align: center;
+color: #4caf50;
+
+input {
+display: block;
+
+width: 90%;
+margin: 8px auto;
+
+padding: 8px;
+border: 1px solid #ccc;
+}
+
+border-radius: 4px;
+
+button {
+
+display: block;
+margin: 10px auto;
+
+padding: 8px 16px;
+background-color: #4caf50;
+color: white;
+border: none;
+
+}
+
+border-radius: 4px;
+cursor: pointer;
+
+button:hover {
+background-color: #45a049;
+}
+
+.result {
+margin-top: 10px;
+
+color: #333;
+background-color: #e0f7fa;
+padding: 8px;
+border-radius: 4px;
+
+}
+
+min-height: 30px;
+
+script.js code:
+let arr = [];
+
+let arraySize = 0;
+function setArraySize() {
+arraySize = parseInt(document.getElementById("arraySize").value);
+
+const elementInputsDiv = document.getElementById("elementInputs");
+const createResultDiv = document.getElementById("createResult");
+elementInputsDiv.innerHTML = "";
+createResultDiv.innerHTML = "";
+arr = [];
+
+if (isNaN(arraySize) || arraySize <= 0) {
+elementInputsDiv.innerHTML = "Please enter a valid number of elements.";
+}
+
+return;
+
+// Create inputs for each element
+
+for (let i = 0; i < arraySize; i++) {
+const input = document.createElement("input");
+input.type = "text";
+input.placeholder = `Element ${i + 1}`;
+
+}
+
+input.id = `element${i}`;
+elementInputsDiv.appendChild(input);
+
+// Add create button
+const createBtn = document.createElement("button");
+createBtn.textContent = "Create Array";
+createBtn.onclick = createArray;
+}
+
+elementInputsDiv.appendChild(createBtn);
+
+function createArray() {
+
+arr = [];
+for (let i = 0; i < arraySize; i++) {
+
+const value = document.getElementById(`element${i}`).value.trim();
+if (value === "") {
+
+document.getElementById("createResult").innerHTML = `Please enter all elements.`;
+return;
+
+}
+arr.push(value);
+
+}
+
+}
+document.getElementById("createResult").innerHTML = `Array created: [${arr.join(", ")}]`;
+
+function removeElement() {
+const removeResultDiv = document.getElementById("removeResult");
+if (arr.length === 0) {
+removeResultDiv.innerHTML = "Array is empty.";
+}
+
+return;
+
+let element = document.getElementById("removeElement").value.trim();
+
+let index = arr.indexOf(element);
+if (index !== -1) {
+arr.splice(index, 1);
+
+removeResultDiv.innerHTML = `Element '${element}' removed. Updated array: [${arr.join(", ")}]`;
+} else {
+
+}
+
+}
+
+removeResultDiv.innerHTML = `Element '${element}' not found in array.`;
+
+function checkElement() {
+const checkResultDiv = document.getElementById("checkResult");
+if (arr.length === 0) {
+checkResultDiv.innerHTML = "Array is empty.";
+}
+
+return;
+
+let element = document.getElementById("checkElement").value.trim();
+if (arr.includes(element)) {
+checkResultDiv.innerHTML = `Yes, array contains '${element}'.`;
+} else {
+
+}
+
+}
+
+checkResultDiv.innerHTML = `No, array does not contain '${element}'.`;
+
+function emptyArray() {
+arr = [];
+}
+
+document.getElementById("emptyResult").innerHTML = "Array has been emptied.";
+
+Output:
+
+

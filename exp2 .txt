@@ -1,0 +1,335 @@
+SCTR’s PUNE INSTITUTE OF COMPUTER TECHNOLOGY, PUNE - 411043
+DEPARTMENT OF ELECTRONICS & TELECOMMUNICATION ENGINEERING
+
+Lab Practice -2 [404184C] : ELECTIVE-III(C) - JavaScript
+ACADEMIC YEAR: 2025-26
+CLASS:
+
+BE
+
+DIV:
+
+Roll No
+
+42101
+
+ABC ID:
+
+05
+
+Batch:
+
+P5
+
+506826699570
+Experiment No.:02
+
+Code:
+do-index.html code:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table Generator using Do-While Loop</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="info">
+
+<h2>Name: Vedant Agrawal</h2>
+<h3>Roll Number: 42101</h3>
+
+</div>
+
+<div class="container">
+<h1>Multiplication Table Generator Using Do-While Loop</h1>
+<label for="numberInput">Enter a number:</label>
+
+<input type="number" id="numberInput" placeholder="Enter number">
+<button onclick="generateTableUsingDoWhileLoop()">Generate Table</button>
+<div id="tableResult"></div>
+<div class="navigation">
+
+<button onclick="window.location.href='for-index.html'">For Loop</button>
+<button onclick="window.location.href='while-index.html'">While Loop</button>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+for-index.html code:
+
+DATE:
+SEMESTER
+
+: I
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table Generator using For Loop</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="info">
+<h2>Name: Anurag Maloo</h2>
+<h3>Roll Number: 42235</h3>
+</div>
+<div class="container">
+
+<h1>Multiplication Table Generator Using For Loop</h1>
+<label for="numberInput">Enter a number:</label>
+<input type="number" id="numberInput" placeholder="Enter number">
+
+<button onclick="generateTableUsingForLoop()">Generate Table</button>
+<div id="tableResult"></div>
+<div class="navigation">
+<button onclick="window.location.href='while-index.html'">While Loop</button>
+
+<button onclick="window.location.href='do-index.html'">Do-While Loop</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+while-index.html code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table Generator using While Loop</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="info">
+<h2>Name: Anurag Maloo</h2>
+<h3>Roll Number: 42235</h3>
+</div>
+<div class="container">
+
+<h1>Multiplication Table Generator Using While Loop</h1>
+<label for="numberInput">Enter a number:</label>
+<input type="number" id="numberInput" placeholder="Enter number">
+
+<button onclick="generateTableUsingWhileLoop()">Generate Table</button>
+<div id="tableResult"></div>
+<div class="navigation">
+
+<button onclick="window.location.href='for-index.html'">For Loop</button>
+<button onclick="window.location.href='do-index.html'">Do-While Loop</button>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+style.css code:
+
+body {
+
+font-family: Arial, sans-serif;
+background-color: #f0f8ff;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0;
+
+}
+
+padding: 20px 0;
+
+.info {
+
+text-align: center;
+margin-bottom: 20px;
+
+background-color: #e8f5e9;
+padding: 10px 20px;
+
+border-radius: 8px;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+width: 400px;
+
+.info h2, .info h3 {
+
+}
+
+margin: 5px;
+color: #2e7d32;
+
+.container {
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+width: 400px;
+
+input {
+
+display: block;
+
+margin: 10px auto;
+padding: 10px;
+
+}
+
+border: 1px solid #ccc;
+border-radius: 4px;
+
+button {
+padding: 10px 20px;
+
+margin-top: 10px;
+background-color: #4caf50;
+color: white;
+border: none;
+
+}
+
+border-radius: 4px;
+cursor: pointer;
+
+button:hover {
+background-color: #45a049;
+}
+
+h1 {
+color: #333;
+}
+
+#tableResult {
+margin-top: 20px;
+
+color: #333;
+background-color: #e0f7fa;
+
+}
+
+padding: 10px;
+border-radius: 4px;
+
+.error {
+color: red;
+}
+
+font-weight: bold;
+
+td {
+
+border: 1px solid #333;
+padding: 10px;
+
+}
+
+text-align: center;
+
+.navigation {
+}
+
+margin-top: 20px;
+
+.navigation button {
+
+}
+
+background-color: #2196f3;
+margin: 5px;
+
+.navigation button:hover {
+background-color: #1976d2;
+}
+
+script.js code:
+function validateInput(number) {
+
+if (isNaN(number) || number === 0) {
+document.getElementById("tableResult").innerHTML =
+
+`<p class="error">Invalid input. Please enter a non-zero number.</p>`;
+return false;
+
+}
+
+}
+return true;
+
+function generateTableUsingForLoop() {
+let number = parseInt(document.getElementById("numberInput").value);
+if (!validateInput(number)) return;
+
+let tableHTML = `<table><tr><th>Multiplication Table of ${number}</th></tr>`;
+for (let i = 1; i <= 10; i++) {
+}
+
+}
+
+tableHTML += `<tr><td>${number} x ${i} = ${number * i}</td></tr>`;
+
+tableHTML += "</table>";
+document.getElementById("tableResult").innerHTML = tableHTML;
+
+function generateTableUsingWhileLoop() {
+let number = parseFloat(document.getElementById("numberInput").value);
+if (!validateInput(number)) return;
+
+let tableHTML = `<table><tr><th>Multiplication Table of ${number}</th></tr>`;
+let i = 1;
+while (i <= 10) {
+tableHTML += `<tr><td>${number} x ${i} = ${number * i}</td></tr>`;
+}
+
+}
+
+i++;
+
+tableHTML += "</table>";
+document.getElementById("tableResult").innerHTML = tableHTML;
+
+function generateTableUsingDoWhileLoop() {
+let number = parseFloat(document.getElementById("numberInput").value);
+if (!validateInput(number)) return;
+
+let tableHTML = `<table><tr><th>Multiplication Table of ${number}</th></tr>`;
+let i = 1;
+do {
+tableHTML += `<tr><td>${number} x ${i} = ${number * i}</td></tr>`;
+i++;
+} while (i <= 10);
+
+}
+
+tableHTML += "</table>";
+document.getElementById("tableResult").innerHTML = tableHTML;
+
+Output:
+
+

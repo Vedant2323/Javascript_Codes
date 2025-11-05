@@ -1,0 +1,258 @@
+SCTR’s PUNE INSTITUTE OF COMPUTER TECHNOLOGY, PUNE - 411043
+DEPARTMENT OF ELECTRONICS & TELECOMMUNICATION ENGINEERING
+
+Lab Practice -2 [404184C] : ELECTIVE-III(C) - JavaScript
+ACADEMIC YEAR: 2025-26
+CLASS:
+
+BE
+
+DIV:
+
+Roll No
+
+42101
+
+ABC ID:
+
+05
+
+Batch:
+
+P5
+
+506826699570
+Experiment No.:01
+
+Code:
+index.html code:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Calculator using JavaScript</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="info">
+<h3>Name:Vedant Agrawal</h3>
+<h3>Roll Number:42101</h3>
+</div>
+<div class="container">
+
+<h1>Geometric Area Calculator</h1>
+<div class="shape-box">
+<h2>Triangle</h2>
+
+<label>Enter sides of Triangle:</label>
+<input type="number" id="sideA" placeholder="Side A">
+
+<input type="number" id="sideB" placeholder="Side B">
+<input type="number" id="sideC" placeholder="Side C">
+
+<button onclick="calculateTriangleArea()">Calculate</button>
+<div id="triangleResult" class="result"></div>
+
+</div>
+
+<div class="shape-box">
+<h2>Rectangle</h2>
+
+<label>Enter Rectangle dimensions:</label>
+<input type="number" id="rectLength" placeholder="Length">
+
+<input type="number" id="rectBreadth" placeholder="Breadth">
+<button onclick="calculateRectangleArea()">Calculate</button>
+
+<div id="rectangleResult" class="result"></div>
+</div>
+
+DATE:
+SEMESTER
+
+: I
+
+<div class="shape-box">
+
+<h2>Circle</h2>
+<label>Enter Circle radius:</label>
+
+<input type="number" id="circleRadius" placeholder="Radius">
+<button onclick="calculateCircleArea()">Calculate</button>
+
+<div id="circleResult" class="result"></div>
+</div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
+
+style.css code:
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f8ff;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+margin: 0;
+padding: 20px 0;
+
+.info {
+text-align: center;
+
+margin-bottom: 20px;
+background-color: #e8f5e9;
+padding: 10px 20px;
+border-radius: 8px;
+
+}
+
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+width: 400px;
+
+.info h3 {
+margin: 5px;
+}
+
+color: #2e7d32;
+
+.container {
+
+background-color: white;
+padding: 20px;
+
+border-radius: 8px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+text-align: center;
+width: 400px;
+
+.shape-box {
+margin-bottom: 20px;
+
+padding: 15px;
+border: 1px solid #ccc;
+
+}
+
+border-radius: 8px;
+
+input {
+display: block;
+
+margin: 8px auto;
+padding: 8px;
+
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+width: 80%;
+
+button {
+
+padding: 8px 16px;
+margin: 8px;
+
+background-color: #4caf50;
+color: white;
+border: none;
+border-radius: 4px;
+}
+
+cursor: pointer;
+
+button:hover {
+}
+
+background-color: #45a049;
+
+h1 {
+}
+
+color: #333;
+
+h2, h3 {
+
+}
+
+margin: 5px;
+color: #4caf50;
+
+.result {
+margin-top: 10px;
+
+color: #333;
+background-color: #e0f7fa;
+
+}
+
+padding: 8px;
+border-radius: 4px;
+
+script.js code:
+function calculateTriangleArea() {
+
+let a = parseFloat(document.getElementById("sideA").value);
+let b = parseFloat(document.getElementById("sideB").value);
+let c = parseFloat(document.getElementById("sideC").value);
+const resultDiv = document.getElementById("triangleResult");
+if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+resultDiv.innerHTML = "Enter valid positive sides.";
+
+}
+
+return;
+
+let s = (a + b + c) / 2;
+let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+}
+
+resultDiv.innerHTML = `Area of Triangle: ${area.toFixed(2)}`;
+
+function calculateRectangleArea() {
+
+let length = parseFloat(document.getElementById("rectLength").value);
+let breadth = parseFloat(document.getElementById("rectBreadth").value);
+const resultDiv = document.getElementById("rectangleResult");
+if (isNaN(length) || isNaN(breadth) || length <= 0 || breadth <= 0) {
+
+}
+
+}
+
+resultDiv.innerHTML = "Enter valid dimensions.";
+return;
+
+let area = length * breadth;
+resultDiv.innerHTML = `Area of Rectangle: ${area.toFixed(2)}`;
+
+function calculateCircleArea() {
+let radius = parseFloat(document.getElementById("circleRadius").value);
+const resultDiv = document.getElementById("circleResult");
+if (isNaN(radius) || radius <= 0) {
+
+}
+
+}
+
+resultDiv.innerHTML = "Enter valid radius.";
+return;
+
+let area = Math.PI * radius * radius;
+resultDiv.innerHTML = `Area of Circle: ${area.toFixed(2)}`;
+
+Output:
+
+

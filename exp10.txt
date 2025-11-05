@@ -1,0 +1,71 @@
+SCTR’s PUNE INSTITUTE OF COMPUTER TECHNOLOGY, PUNE - 411043
+DEPARTMENT OF ELECTRONICS & TELECOMMUNICATION ENGINEERING
+
+Lab Practice -2 [404184C] : ELECTIVE-III(C) - JavaScript
+ACADEMIC YEAR: 2025-26
+CLASS:
+
+BE
+
+DIV:
+
+Roll No
+
+42101
+
+ABC ID:
+
+05
+
+Batch:
+
+P5
+
+506826699570
+Experiment No.:10
+
+Code:
+multiply.js code:
+const num = parseInt(process.argv[2], 10);
+if (isNaN(num)) {
+console.log('Please provide a valid integer as a command line argument.');
+}
+
+process.exit(1);
+
+else if (num == 0) {
+console.log('Please Enter a non-zero number.');
+}
+
+process.exit(1);
+
+console.log(`Multiplication Table for ${num} (using for loop):`);
+for (let i = 1; i <= 10; i++) {
+console.log(`${num} x ${i} = ${num * i}`);
+}
+
+console.log(`\nMultiplication Table for ${num} (using while loop):`);
+let j = 1;
+while (j <= 10) {
+console.log(`${num} x ${j} = ${num * j}`);
+}
+
+j++;
+
+console.log(`\nMultiplication Table for ${num} (using do-while loop):`);
+let k = 1;
+do {
+
+console.log(`${num} x ${k} = ${num * k}`);
+k++;
+
+} while (k <= 10);
+
+DATE:
+SEMESTER
+
+: I
+
+Output:
+
+
